@@ -10,7 +10,7 @@
 * Press "Fetch words" and the words will enter the webSql
 * Press "Show report" end the words will return from the webSql
 
-##Backend
+## Backend
 
 * Download this rpository `git clone https://github.com/chaim1/Fetch-Words.git` in your cmd or terminal
 * Download XAMPP [XAMPP](https://www.apachefriends.org/index.html) 
