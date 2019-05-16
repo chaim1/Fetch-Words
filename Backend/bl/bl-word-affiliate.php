@@ -24,8 +24,8 @@ include_once '../models/mod-word-affiliate.php' ;
     {
         $query = "INSERT INTO `affiliate` (`word`, `score`) VALUES (:wo, :sc )";
             $params = array(
-                "wo" => $param->getWords(),
-                "sc" => $param->getPhone()
+                "wo" => $param->getWord(),
+                "sc" => $param->getScore()
             );
             
             return $this->getDal()->insert($query,$params);
