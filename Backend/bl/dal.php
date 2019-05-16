@@ -2,7 +2,6 @@
 
 final class DataAccessLayer
 {
-
     private $host = 'localhost';
     private $db = 'Fetch Words';
     private $user = 'root';
@@ -40,6 +39,6 @@ final class DataAccessLayer
         $pdo = new PDO($this->dsn, $this->user, $this->pass, $this->opt);
         $statement = $pdo->prepare($query);
         $statement->execute($params);
-        return $pdo->lastInsertId(); 
+        return $pdo->lastInsertId();
     }
 }

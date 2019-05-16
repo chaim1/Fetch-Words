@@ -1,20 +1,20 @@
-<?php  
+<?php
 include_once 'model.php';
 require_once '../bl/bl-word-marketing.php';
 
 
     class ModelWordsM  implements IModel
     {
-        private $word;        
+        private $word;
         private $score;
-        
-        function __construct($arr) { 
+
+        function __construct($arr) {
 
                 $this->word = $arr['word'];
                 $this->score = $arr['score'];
         }
 
-        //get
+        //get value
 
         public function getWord() {
             return $this->word;
@@ -23,7 +23,7 @@ require_once '../bl/bl-word-marketing.php';
             return $this->score;
         }
 
-        //set
+        //set value
 
         public function setWord($data) {
             $this->word =$data;

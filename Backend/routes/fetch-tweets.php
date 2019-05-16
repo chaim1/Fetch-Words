@@ -2,10 +2,12 @@
 include_once '../controllers/cont-word-affiliate.php';
 include_once '../controllers/cont-word-influencer.php';
 include_once '../controllers/cont-word-marketing.php';
+
 $contWordAffiliate = new wordAffiliateContruler;
 $contWordInfluencer = new wordInfluencerContruler;
 $contWordMarketing = new wordMarketingContruler;
 
+// Brings the words from api and puts them into a database
 function setWordToDB($urlApi,$nameModel,$controler){
     $contents = file_get_contents($urlApi);
     $manage = json_decode($contents, true);
@@ -14,6 +16,7 @@ function setWordToDB($urlApi,$nameModel,$controler){
     };
 }
 
+//Arrange the object and send it to a database
 function bildAffiliateModel($nameModel,$word,$score,$controler){
     $word = new $nameModel([
         'word' => $word,

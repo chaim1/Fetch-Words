@@ -1,4 +1,4 @@
-<?php 
+<?php
 // header('Content-type: application/json');
 include_once '../controllers/cont-word-affiliate.php';
 include_once '../controllers/cont-word-influencer.php';
@@ -13,6 +13,7 @@ $contI = $contWordInfluencer->ActionGetWord();
 $contWordAffiliate = new wordAffiliateContruler;
 $contA = $contWordAffiliate->ActionGetWord();
 
+// Fetches the data from the database and arranges it to json and returns it to the client
 function getWordApi($cont){
     $objResult = [];
     $index = 0;
@@ -24,6 +25,7 @@ function getWordApi($cont){
     };
     echo json_encode($objResult);
 }
+
 
 getWordApi($contM);
 getWordApi($contI);
