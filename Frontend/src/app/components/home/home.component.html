@@ -1,0 +1,59 @@
+<button
+  (click)="FetchWords()"
+  type="button"
+  class="btn btn-primary btn-lg btn-block"
+>
+  Fetch words
+</button>
+<div *ngIf="Completed">
+  <button
+    (click)="ShowReport()"
+    type="button"
+    class="btn btn-secondary btn-lg btn-block"
+  >
+    Show report
+  </button>
+</div>
+<!-- Progressbar -->
+<div *ngIf="progress">
+  <p>
+    <ngb-progressbar type="danger" [value]="progress" [striped]="true">{{
+      numProgress
+    }}</ngb-progressbar>
+  </p>
+</div>
+<div class="row" *ngIf="showWordsResult">
+  <div class="col-md-4" *ngFor="let wordTable of showWordsResult">
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Word</th>
+          <th scope="col">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let word of wordTable; let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{word.word}}</td>
+          <td>{{word.score}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table table-dark">
+        <tbody>
+          <tr>
+            <td colspan="2" class="bg-info">Count of Word</td>
+            <td colspan="1" class="bg-info">{{wordTable.length}}</td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>
+<!-- loading -->
+<div *ngIf="!showWordsResult&&loader" class="wrap">
+    <div class="loading">
+      <div class="bounceball"></div>
+      <div class="text">LOADING</div>
+    </div>
+  </div>
